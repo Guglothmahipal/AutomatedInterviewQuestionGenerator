@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Varela+Round&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/v4-shims.min.js"
+        integrity="sha512-Ny27nj/CA4kOUa/2b2bhjr8YiJ+OfttH2314Wg8drWh4z9JqGO1PVEqPvo/kM+PjN5UEY4gFxo+ADkhXoGiaSg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+
+    <link rel="stylesheet" href="dash.css">
+</head>
+
+<body>
+    <nav class="navbar d-flex justify-content-between align-items-center px-3">
+        <div class="d-flex align-items-center">
+            <button class="btn" id="toggle-btn">
+                <img src="public/sidebar.png" alt="" height="25px">
+            </button>
+            <p class="varmaai mt-3 mx-2">VARMAAI</p>
+        </div>
+        <div class="profile-container mx-2">
+            <div class="profile-icon" id="profile-icon">
+                <img src="public/profile.png" alt="Profile" height="35px">
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <div class="menu-item" id="profile">Profile</div>
+                <div class="menu-item" id="Settings">Settings</div>
+                <div class="menu-item" id="logout">Log out</div>
+
+
+
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div id="sidebar" class="p-3">
+        <h4>Sidebar Menu</h4>
+        <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Home</a></li>
+            <li><a href="#" class="text-white">About</a></li>
+            <li><a href="#" class="text-white">Services</a></li>
+            <li><a href="#" class="text-white">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="main container  ">
+
+
+
+        <div class="generator-section " id="generator-section">
+            <h2 class="heading">Let's <span class="varmaai"> Crack </span>This One <span class="varmaai">UP!</span></h2>
+            <p class="subheading">Get highly relevant interview questions for any job in seconds.</p>
+
+            <div class="options-box">
+                <div class="option-card" onclick="showForm('resume')">📄 Resume</div>
+                <div class="option-card" onclick="showForm('jd')">📑 Job Description</div>
+            </div>
+
+            <!-- Hidden Form Section -->
+            <div class="generator-box" id="input-form" style="display: none; flex-direction: row; gap: 1rem;">
+
+                <!-- Resume Upload Section -->
+                <div id="resume-section" style="display: none;">
+                    <input class="input-field" placeholder="Enter Desired Role" id="role">
+                    <input class="input-field" placeholder="Enter Your Experience" id="exp">
+                    <select class="input-field" id="difficulty">
+                        <option value="" disabled selected>Select Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <input type="file" id="resumeupload" style="display: none;" />
+                    <label for="resumeupload" class="upload-btn">📄 Upload Resume</label>
+                </div>
+
+                <!-- Job Description Upload Section -->
+                <div id="jd-section" style="display: none;">
+                    <input class="input-field" placeholder="Enter Desired Role" id="role">
+                    <input class="input-field" placeholder="Enter Your Experience" id="exp">
+                    <input type="file" id="jdupload" style="display: none;" />
+                    <label for="jdupload" class="upload-btn">📑 Upload Job Description</label>
+                </div>
+                <br>
+                <!-- Generate Button -->
+                <button class="generate-btn mt-3" id="generateBtn" style="display: none;" onclick="">✨Generate</button>
+                <button class="back-btn mt-3" id="backBtn" style="display: none;" onclick="goback()"><i
+                        class="fa-solid fa-arrow-left btnicn"></i> <span class="btntext">Back</span></button>
+            </div>
+
+        </div>
+        <div id="loader" class="loader-wrapper" style="display: none;">
+            <div class="loader"></div>
+            <p class="loading-text">Loading...</p>
+          </div>
+          
+
+
+
+
+
+
+    </div>
+    <br>
+    <div class="output-box"></div>
+    <div class="export">
+        <button class="exportbtn" id="exportbtn"><i class="fa-solid fa-download"> </i> Export</button>
+    </div>
+    <!-- Feedback Form -->
+    <div class="feedback-section" style="margin-top: 20px; text-align: center; display: none;" id="feedback-section">
+        <h4 style="color: white;">Was this helpful?</h4>
+        <div class="thumb-buttons">
+            <button id="thumbsUp" class="thumb-btn"><i class="fa-solid fa-thumbs-up"></i></button>
+            <button id="thumbsDown" class="thumb-btn"><i class="fa-solid fa-thumbs-down"></i></button>
+        </div>
+    </div>
+
+    <!-- admin panel side -->
+    <div id="admin-panel" style="display:none; text-align:center; margin-top:40px;">
+        <h2 class="heading">🛠 Admin Panel</h2>
+        <button class="generate-btn" onclick="loadAllQuestions()">Load All Questions</button>
+        <div id="questionsContainer" style="margin-top:20px;"></div>
+    </div>
+
+    
+<!-- Thank You Section -->
+<div id="thank-you-section" style="display: none; margin-top: 20px; text-align: center;">
+    <h2 style="color: white;">🎉 Thank You for Your Feedback! 🎉</h2>
+    <p style="color: white;">Your input helps us improve and serve you better.</p>
+    <button class="generate-btn" onclick="backToHome()">Back to Home</button>
+</div>
+
+
+    <div class="fullbody">
+        <div class="container profile">
+            <div class="personalinfo ">
+                <div class="profileicon ">
+                    <img class="img" src="public/usericon.jpg" alt="">
+                </div>
+                <div class="profile-card">
+                    <div class="profile-row">
+                      <div class="profile-label">First Name:</div>
+                      <div class="profile-value" id="name">....</div>
+                    </div>
+                    <div class="profile-row">
+                      <div class="profile-label">Email:</div>
+                      <div class="profile-value" id="usermail">....</div>
+                    </div>
+                    <div class="profile-row">
+                      <div class="profile-label">Phone:</div>
+                      <div class="profile-value" id="userphn">....</div>
+                    </div>
+                    
+                  
+                  </div>
+                  
+            </div>
+            <div class="updates">
+                <div class="save ">
+                    <button type="button" class="btn updateprofile " title="Save"><i class="fa-solid fa-floppy-disk"></i></button>
+                </div>
+                <div class="updatefeatures">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+        window.jspdf = window.jspdf || {};
+        const { jsPDF } = window.jspdf;
+    </script>
+
+
+    <script>
+        const generatorsection = document.getElementById("generator-section");
+        const form = document.getElementById("input-form");
+        const resume = document.getElementById("resume-section");
+        const jd = document.getElementById("jd-section");
+        const generateBtn = document.getElementById("generateBtn");
+        const back = document.getElementById("backBtn");
+        function goback() {
+            resume.style.display = "none";
+            jd.style.display = "none";
+            generateBtn.style.display = "none";
+            back.style.display = "none";
+            generatorsection.style.display = "flex";
+            generatorsection.style.justifyContent = "center";
+            generatorsection.style.alignItems = "center";
+            form.style.display = "none";
+        }
+        function showForm(type) {
+
+            form.style.display = "flex";
+            generateBtn.style.display = "inline-block";
+
+            if (type === 'resume') {
+                resume.style.display = "block";
+                jd.style.display = "none";
+                back.style.display = "block";
+            } else if (type === 'jd') {
+                resume.style.display = "none";
+                jd.style.display = "block";
+                back.style.display = "block";
+            }
+
+            console.log("Selected:", type);
+        }
+
+        // Function to extract text from a PDF file
+        async function extractTextFromPDF(file) {
+            const fileReader = new FileReader();
+
+            return new Promise((resolve, reject) => {
+                fileReader.onload = async function () {
+                    const typedArray = new Uint8Array(this.result);
+                    const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
+                    let text = "";
+
+                    for (let i = 1; i <= pdf.numPages; i++) {
+                        const page = await pdf.getPage(i);
+                        const content = await page.getTextContent();
+                        const pageText = content.items.map(item => item.str).join(" ");
+                        text += pageText + "\n";
+                    }
+
+                    resolve(text);
+                };
+
+                fileReader.onerror = reject;
+                fileReader.readAsArrayBuffer(file);
+            });
+        }
+
+
+        document.getElementById("generateBtn").addEventListener("click", async function () {
+            //loader..
+            const loader=document.getElementById("loader");
+             //show loader..
+            
+            const body = document.body;
+            const role = document.querySelector("#input-form input#role")?.value;
+            const experience = document.querySelector("#input-form input#exp")?.value;
+            const difficulty = document.getElementById("difficulty")?.value;
+            const resumeFile = document.getElementById("resumeupload").files[0];
+            const jdFile = document.getElementById("jdupload").files[0];
+
+            let selectedFile = resumeFile || jdFile;
+
+            if (!selectedFile) {
+                alert("Please upload a PDF file.");
+                return;
+            }
+
+            if (selectedFile.type !== "application/pdf") {
+                alert("Only PDF files are supported.");
+                return;
+            }
+
+            try {
+                const text = await extractTextFromPDF(selectedFile);
+                console.log("🔹 Desired Role:", role);
+                console.log("🔹 Experience:", experience);
+                console.log("🔹 Extracted PDF Text:\n", text);
+
+
+                const type = resumeFile ? 'resume' : 'jd';
+                loader.style.display="flex";
+                // Calling API
+                const response = await fetch('http://localhost:5000/generate-questions', {
+
+
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        text,
+                        type,
+                        role,
+                        experience,
+                        difficulty
+                    })
+                });
+
+                const result = await response.json();
+
+
+                console.log("✅ Generated Questions:\n", result.questions);
+
+
+                let outputDiv = document.querySelector('.output-box');
+                // 🛠 FIX: Save to Firebase with proper import
+const { addDoc, collection, serverTimestamp, getFirestore } = await import("https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js");
+const db = getFirestore();
+
+await addDoc(collection(db, "questions"), {
+  uid: localStorage.getItem("loggedInUserId"),
+  text: result.questions,
+  createdAt: serverTimestamp()
+});
+
+                if (outputDiv) {
+                 
+                    body.style.overflow = "auto";
+                    outputDiv.innerText = result.questions;
+                    outputDiv.style.fontSize = "1.5rem";
+                    outputDiv.style.fontFamily = "Varela Round";
+                    
+                    outputDiv.style.display = "block";
+                    outputDiv.style.background = " rgb(23, 22, 22)";
+                    outputDiv.innerHTML = `<span style="
+                    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    ">${result.questions}</span>`;
+                    document.getElementById('feedback-section').style.display="block";
+
+
+                } else {
+                    console.error("⚠️ .output-box not found in the HTML!");
+                }
+
+
+            } catch (err) {
+                console.error("Error reading PDF or generating questions:", err);
+            }finally{
+                loader.style.display="none"; //hide loader...
+            }
+
+        });
+
+        document.getElementById('exportbtn').addEventListener('click', () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const pageHeight = doc.internal.pageSize.getHeight();
+
+            const text = document.querySelector('.output-box').innerText;
+
+            if (!text.trim()) {
+                alert("No questions to export!");
+                return;
+            }
+
+            const lines = doc.splitTextToSize(text, 180);
+            let y = 30;
+
+            lines.forEach((line, index) => {
+                if (y > pageHeight - 20) {
+                    doc.addPage();
+                    y = 30;
+                }
+
+                doc.text(line, 10, y);
+                y += 7;
+            });
+            doc.save("Interview_Questions.pdf");
+        });
+    </script>
+
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const toggleBtn = document.getElementById("toggle-btn");
+        const body = document.body;
+
+        toggleBtn.addEventListener("click", function () {
+            const isSidebarOpen = sidebar.classList.toggle("show");
+            body.classList.toggle("shifted", isSidebarOpen);
+        });
+
+        const profileIcon = document.getElementById('profile-icon');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        profileIcon.addEventListener('click', () => {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Optional: Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!profileIcon.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+
+    </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+        import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBoc_0dWbIZvyx4yK-HkznRG485TMGN6So",
+            authDomain: "varmaai.firebaseapp.com",
+            projectId: "varmaai",
+            storageBucket: "varmaai.firebasestorage.app",
+            messagingSenderId: "986534934578",
+            appId: "1:986534934578:web:cb37e23a2859bda1c0a42b",
+            measurementId: "G-VDJWVWG6FJ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        document.getElementById("thumbsUp").addEventListener("click", handleFeedback);
+    document.getElementById("thumbsDown").addEventListener("click", handleFeedback);
+
+    async function handleFeedback(event) {
+        const uid = localStorage.getItem("loggedInUserId");
+        const feedbackType = event.target.id === "thumbsUp" ? "positive" : "negative";
+
+        try {
+            const { addDoc, collection, serverTimestamp } = await import("https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js");
+            const { getFirestore } = await import("https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js");
+            const db = getFirestore();
+
+            await addDoc(collection(db, "feedbacks"), {
+                feedback: feedbackType,
+                uid: uid || "anonymous",
+                createdAt: serverTimestamp()
+            });
+
+            document.getElementById('feedback-section').style.display = "none";
+            document.getElementById('thank-you-section').style.display = "block";
+        } catch (error) {
+            console.error("❌ Feedback error:", error);
+            alert("Error submitting feedback. Please try again.");
+        }
+    
+}
+
+
+        const uid = localStorage.getItem('loggedInUserId');
+
+        async function showprofile(e) {
+            e.stopPropagation(); // ✅ Prevent bubbling that closes it instantly
+            document.querySelector('.fullbody').style.display = "block";
+            document.querySelector('.fullbody').style.justifyContent = "center";
+            document.querySelector('.fullbody').style.alignItems = "center";
+            document.getElementById('dropdown-menu').style.display = "none";
+            onAuthStateChanged(auth, async (user) => {
+                if (user && user.uid === uid) {
+    try {
+        const nameElement = document.getElementById("name");
+        const phone=document.getElementById("userphn");
+        const email=document.getElementById("usermail");
+        let loading = true;
+
+
+        const userRef = doc(db, "users", uid);
+        const userSnap = await getDoc(userRef); // fetch happens here
+
+        if (userSnap.exists()) {
+    const userData = userSnap.data();
+    if (userData.role === "admin") {
+        document.body.classList.add("admin");
+        localStorage.setItem("userRole", "admin");
+    } else {
+        localStorage.setItem("userRole", "user");
+    }
+
+
+            if (nameElement) {
+                loading = false;
+                nameElement.innerText = userData.firstname || "Unknown";
+                email.innerText=userData.email || "NA";
+                phone.innerText=userData.phone || "NA";
+            }
+        } else {
+            console.log("No user document found in Firestore.");
+            if (nameElement) {
+                loading = false;
+                nameElement.innerText = "User not found";
+            }
+        }
+    } catch (err) {
+        console.error("Error fetching user data:", err);
+    }
+} else {
+    console.log("User not logged in or UID mismatch.");
+}
+
+
+            }
+        )};
+
+        // ✅ Hide profile on outside click
+        document.addEventListener('click', function (e) {
+            const fullbody = document.querySelector('.fullbody');
+            const profile = document.querySelector('.profile');
+
+            if (fullbody.style.display === "block" && !profile.contains(e.target)) {
+                fullbody.style.display = "none";
+            }
+        });
+
+        // ✅ Add click listener to #profile button
+        const profileBtn = document.getElementById("profile");
+        if (profileBtn) {
+            profileBtn.addEventListener("click", showprofile);
+        }
+        function backToHome() 
+        {
+        location.reload(); // refresh the page to show home
+        }
+        if (localStorage.getItem("userRole") === "admin") {
+    document.getElementById("admin-panel").style.display = "block";
+}
+async function loadAllQuestions() {
+  const container = document.getElementById("questionsContainer");
+  container.innerHTML = "";
+
+  const { getDocs, collection, deleteDoc, doc } = await import("https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js");
+  const db = getFirestore();
+  const snapshot = await getDocs(collection(db, "questions"));
+
+  snapshot.forEach((docSnap) => {
+    const data = docSnap.data();
+    const card = document.createElement("div");
+    card.style.border = "1px solid gray";
+    card.style.padding = "10px";
+    card.style.marginBottom = "10px";
+    card.innerHTML = `
+      <p style="color:white; font-size:1rem;">${data.text}</p>
+      <button class="btn btn-danger btn-sm" onclick="deleteQuestion('${docSnap.id}')">🗑 Delete</button>
+    `;
+    container.appendChild(card);
+  });
+}
+
+async function deleteQuestion(id) {
+  const { deleteDoc, doc } = await import("https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js");
+  const db = getFirestore();
+  await deleteDoc(doc(db, "questions", id));
+  alert("Deleted successfully!");
+  loadAllQuestions();
+}
+
+
+    </script>
+
+
+<script>
+    function backToHome() {
+      location.href = "dashboard.html"; // Navigate to dashboard (or home)
+    }
+  </script>
+  
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

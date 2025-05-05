@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>VARMAAI</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Varela+Round&display=swap"
+    rel="stylesheet">
+   
+
+  <style>
+    /* Ensure offcanvas background matches navbar */
+    .offcanvas {
+      background-color: black;
+      color: white;
+    }
+
+    /* Styling for login/register buttons */
+    .custom-btn {
+      background-color: rgb(130, 138, 154);
+      color: white !important;
+      border-radius: 10px;
+      padding: 8px 15px;
+      text-decoration: none;
+    }
+
+    .mainline,
+    .lead,
+    .card-text,
+    .descpara {
+      font-family: Varela Round;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head" id="head">
+
+  </div>
+
+
+
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-3" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">VARMAAI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Offcanvas Sidebar -->
+      <div class="offcanvas offcanvas-end sidebar" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3 nav-underline">
+            <li class="nav-item">
+              <a class="nav-link" href="#head">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-3" href="#servicehead">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-3" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-3" href="#contact">Contact</a>
+            </li>
+          </ul>
+
+          <div class="d-flex justify-content-center align-items-center gap-3">
+            <a href="#" class="custom-btn" onclick="login()">LOGIN</a>
+            <a href="#" class="custom-btn" onclick="signup()">REGISTER</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Main Content -->
+
+  <main class="container-fluid mt-3 pt-1 mainclass">
+    <div class="headingdiv mx-2 ">
+      <div class="maindiv">
+        <h1 class="mainline">Welcome to <span class="varmaai">VARMA<span class="secondcolor">AI</span></span></h1>
+      </div>
+      <div class="leaddiv">
+        <p class="lead">Your <span class="secondcolor">AI</span>-powered solution for the future.</p>
+      </div>
+
+
+
+
+
+
+      <p class="card-text ">
+        "Empower Your Interview Preparation with AI"<br>
+        <b>VARMAAI</b> is your AI-driven career partner
+        that transforms job
+        descriptions into real-time interview questions
+      </p>
+
+      <!-- <p class="card-text">
+       <span class="varmaai">Kickstart</span>  your journey, Dive in and
+         practice with <span class="secondcolor">AI</span>-driven predicted questions to sharpen your skills!
+
+      </p> -->
+      <a href="#servicehead"><button class="servicebutton mt-1">EXPLORE OUR SERVICES</button></a> &nbsp;
+      <button class="joinbutton mt-1" onclick="login()">JOIN NOW</button>
+    </div>
+
+    <div class="image">
+
+    </div>
+
+  </main>
+  <div class="servicehead" id="servicehead"></div>
+  <section class="services container " id="serviceid">
+
+    <h1 class="serviceh1">Learn what <span class="varmaai">VARMA<span class="secondcolor">AI</span></span> can do!
+    </h1>
+    <br>
+    <div class="card1">
+      <div class="draw">
+        <div class="descjob">
+          <img src="public/jobdesc.png" alt="" height="80%">
+        </div>
+        <h2 class="deschead">From Job Descriptions</h2>
+        <p class="descpara">
+          A job description contains skills that a comapany needs in thier employees.
+          <span class="varmaai">VARMAAI</span> takes in job description and analyzes the description then extract the
+          keywords
+          (skills) on which questions will be framed
+        </p>
+      </div>
+      <div class="desc">
+
+
+      </div>
+
+    </div>
+    <br>
+    <br>
+
+    <div class="card1">
+      <div class="draw2">
+
+      </div>
+      <div class="desc2">
+        <div class="descjob">
+
+          <img src="public/cvimage.webp" alt="" height="80%">
+        </div>
+        <h2 class="deschead">From Employees RESUME</h2>
+        <p class="descpara">A CV contains the skills the holder have <span class="varmaai">VARMAAI</span>
+          analyzes the resume and extract the keywords(skills) that the holder have and predicts the questions
+          based on holder skills</p>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <section class="about  d-flex container" id="about">
+    <div class="aboutheaad">
+      <h1>About <span class="varmaai">VARMA<span class="secondcolor">AI</span>
+    </div>
+
+    <div class="two">
+      <div class="kmit">
+        <img src="public/teamimage.png" alt="" height="100%" width="100%">
+      </div>
+      <div class="kmitdesc">
+        <h1 class="kmitdeschead">Developed by Team</h1><br>
+        <br>
+        <p class="card-text">At <span class="varmaai">VARMA<span class="secondcolor">AI</span> </span> , we believe that
+          every job seeker deserves the right guidance to achieve
+          their dream career. Our dedicated team, driven by a passion
+          for innovation and social impact, created this AI-powered career
+          partner after witnessing countless talented individuals struggle
+          to secure the right job opportunities.</p>
+      </div>
+    </div>
+    </span></h1>
+
+  </section>
+
+  <section class="contact mt-5 container" id="contact">
+
+    <div class="contactdiv">
+      <div class="contactus ">
+        <div class="contactinfo container mt-5">
+          <h1 class="varmaai">Questions? we'll put you on the <br>
+            <center>right path</center>
+          </h1>
+          <br>
+          <p style="text-align: center;"> Ask about VARMAAI services,implementation or collab with us, <br> Our best
+            minds are standing by ready to help</p>
+          <button type="button" class="btn btn-primary">Contact Us <i
+              class="fa-solid fa-arrow-up-right-from-square"></i></button>
+
+        </div>
+      </div>
+      <div class="robot">
+        <img src="public/contactus.png" alt="" style=" width: 100%;">
+      </div>
+    </div>
+
+
+
+
+    </div>
+  </section>
+<div class="fullbody" id="fullbody">
+  <section class="logsign" id="logsign">
+    <div class="loginsignup" style="width: 100%; height: 100%; display: flex; flex-direction: row;" id="login">
+      <div class="message">
+        <h1 class="">Lets get back to our work</h1>
+  
+        <h4>
+          Login with your email and password
+        </h4>
+        <p>Don't have an account ? lets create now </p>
+        <button class="createacc"> create account</button>
+      </div>
+      <div class="login"  id="login-container" >
+        <div class="formpage" >
+          <form action="" id="loginform" method="post">
+            <div id="loginmessage" class="messageDiv" style="display: none;"></div>
+            <h1 class=" mt-3">Log in to <span class="varmaai">VARMA</span><span class="secondcolor">AI</span> </h1>
+            <div class="form-floating mb-3" style="width: 100%;">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+              <label for="email">Email address</label>
+            </div>
+            <div class="form-floating" style="width: 100%;">
+              <input type="password" class="form-control" id="password" placeholder="Password" required>
+              <label for="Password">Password</label>
+              <p style="color: black;" class="mt-2">Forgot your password? <a href="" style="color: black;">Reset here</a>
+              </p>
+  
+            </div>
+            <center><button type="submit" class=" loginbtn" id="submitlogin">Log In <i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></button></center>
+          </form>
+  
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="signup" style="width: 100%; height: 100%; display: flex; flex-direction: row;" id="signup">
+      <div class="message">
+        <h1 class="">Start your journey at VARMAAI</h1>
+  
+        <h4>
+          Create with your email and password
+        </h4>
+        <p>Already have an account ? lets Login now </p>
+        <button class="createacc"> Login account</button>
+      </div>
+      <div class="sign">
+        <div class="formpage">
+          <form action="" id="signupform" method="post" >
+            <div id="signupmessage" class="messageDiv" style="display: none;"></div>
+            <h1 class=" mt-3">Create in to <span class="varmaai">VARMA</span><span class="secondcolor">AI</span> </h1>
+            <div class="form-floating " >
+              <input type="email" class="form-control" id="useremail" placeholder="name@example.com" required>
+              <label for="useremail">Email address</label>
+
+            </div>
+            <br>
+            <div class="form-floating " >
+              <input type="text" class="form-control" id="phone" placeholder="913384..." required>
+              <label for="phone">Phone Number</label>
+
+            </div>
+            <br>
+            <div class="form-floating " >
+              <input type="text" class="form-control" id="userfn" placeholder="name@example.com" required>
+              <label for="userfn">Firstname</label>
+
+            </div>
+            <br>
+            <div class="form-floating" style="width: 100%;">
+              <input type="password" class="form-control" id="userpwd" placeholder="create password" required>
+              <label for="userpwd">Create password</label>
+              <br>
+  
+            </div>
+            <center><button type="submit" class=" loginbtn" id="submitsignup">Sign Up <i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></button></center>
+
+          </form>
+  
+        </div>
+      </div>
+    </div>
+
+    
+  </section>
+ 
+
+</div>
+  
+
+
+  
+  <footer class="bg-dark text-white text-center py-3 mt-5 mb-0">
+        <p>&copy; 2025 VARMAAI. All Rights Reserved.</p>
+    </footer>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+      import{getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js"
+     import {getFirestore, setDoc,doc} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js"
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBoc_0dWbIZvyx4yK-HkznRG485TMGN6So",
+        authDomain: "varmaai.firebaseapp.com",
+        projectId: "varmaai",
+        storageBucket: "varmaai.firebasestorage.app",
+        messagingSenderId: "986534934578",
+        appId: "1:986534934578:web:cb37e23a2859bda1c0a42b",
+        measurementId: "G-VDJWVWG6FJ"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      function showmessage(message,divId){
+        var messageDiv=document.getElementById(divId);
+        messageDiv.style.display="block";
+        messageDiv.innerHTML=message;
+        messageDiv.style.opacity=1;
+        setTimeout(function(){
+          messageDiv.style.opacity=0;
+        },5000);
+      }
+      const signup = document.getElementById('submitsignup');
+signup.addEventListener('click', (event) => {
+  event.preventDefault();
+  const email = document.getElementById('useremail').value;
+  const firstname = document.getElementById('userfn').value;
+  const password = document.getElementById('userpwd').value;
+  const phone=document.getElementById("phone").value;
+  const auth = getAuth();
+  const db = getFirestore();
+
+  createUserWithEmailAndPassword(auth, email, password,phone)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const userData = {
+        email: email,
+        firstname: firstname,
+        phone:phone,
+        role:"user" //change manually to 'admin' in firestore console
+      };
+
+      showmessage('Account created successfully', 'signupmessage');
+
+      const docRef = doc(db, "users", user.uid);
+      setDoc(docRef, userData)
+        .then(() => {
+          document.getElementById('signup').style.display = 'none';
+document.getElementById('login').style.display = 'flex';
+
+        })
+        .catch((error) => {
+          console.error("Error writing document", error);
+        });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/email-already-in-use') {
+        showmessage('Email address already exists!', 'signupmessage');
+      } else {
+        showmessage('Unable to create user', 'signupmessage');
+      }
+    });
+});
+
+const login=document.getElementById('submitlogin');
+login.addEventListener('click',(event)=>{
+  event.preventDefault();
+  const email=document.getElementById('email').value;
+  const password=document.getElementById('password').value;
+  const auth=getAuth();
+
+  signInWithEmailAndPassword(auth,email,password)
+  .then((userCredential)=>{
+    showmessage('login successfull','loginmessage');
+    const user=userCredential.user;
+    localStorage.setItem('loggedInUserId',user.uid);
+    window.location.href='dashboard.html';
+  })
+
+  .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === 'auth/invalid-credential') {
+        showmessage('incorrect email or password', 'loginmessage');
+      } else {
+        showmessage('account does not exist', 'loginmessage');
+      }
+    });
+
+})
+  
+    </script>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
+   
+    
+</body>
+
+</html>

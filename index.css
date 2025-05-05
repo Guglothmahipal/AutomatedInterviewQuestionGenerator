@@ -1,0 +1,633 @@
+
+
+/* body {
+    background: linear-gradient(to top, 
+    #212529, 
+    #212529,  /* Dark gray for first 90px 
+    #212529, 
+    #00000097 320vh);
+    background-repeat: no-repeat;
+    min-height: 98.0vh;
+    overflow-x: hidden;
+    
+} */
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+    background-color: black;
+    /* background-color: white; */
+    position: relative;
+   
+    
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+    /* font-size: 1.1rem; */
+}
+
+.mainclass{
+   /* border: solid white; */
+    display: flex;
+    height: 80vh;
+    justify-content: center; 
+     align-items: center;
+}
+.headingdiv{
+ 
+    /* margin-top: 7%; */
+    width: 55%;
+}
+.image{
+    
+    background-image: url(public/AISAMPLE.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40%;
+    height: 60%;
+   
+    align-items: center;
+    justify-content: center;
+}
+.navbar{    
+    position: sticky;
+  top: 20px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    z-index: 999;
+    background-color: black !important;
+}
+
+.varmaai{
+    color: rgb(87, 128, 215);
+}
+
+
+.card-text{
+    color: white;
+    max-width: 75%;
+    font-size: 1.3rem;
+}
+
+
+.mainline{
+    font-size: 4.5rem;
+  
+}
+/* media for mobile */
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+
+    .mainclass{
+       align-items: center;
+       flex-direction: column;
+       height: 70vh;
+    }
+    
+   .headingdiv{
+    margin-left: 2% !important;
+    width: 100%;
+    border: solid white;
+   }
+   .image{
+    height: 100%;
+    width: 100%;
+    border: solid white;
+    margin-top: 10%;
+    overflow: hidden;
+   }
+    .mainline{
+        font-size: 2rem;
+      
+    }
+
+   
+    .lead{
+        font-size: 1rem !important;
+    }
+
+    .card-text{
+        font-size: 0.8rem;
+    }
+    .servicebutton{
+        height: 40px !important;
+        padding: 1px !important;
+
+    }
+   .card-text{
+    max-width: 100%;
+   }
+}
+/*media for tablets*/
+@media (min-width: 577px) and (max-width: 796px) {
+    
+    .headingdiv{
+        margin-left: 2% !important;
+        
+        width: 100%;
+        height: 40%;
+        margin-top: 5% !important;
+       }
+    .mainclass {
+        width: 90%;
+        margin-left: 1 !important;
+        
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        justify-content: space-between;
+    }
+
+    
+
+    .mainline{
+        font-size: 2.7rem;
+    }
+
+    .image{
+       height: 50%;
+        
+        width: 50%;
+
+    }
+    .lead{
+        font-size: 1.7rem !important;
+        
+    }
+
+    .card-text{
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    .servicebutton{
+        height: 40px !important;
+        width: 190px !important;
+        padding: 1px !important;
+
+    }
+    .services{
+        height: 140vh !important;
+    }
+    .card1{
+        height: 50vh !important;
+        /* width: 100vw !important; */
+        /* border: solid red !important; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+     }
+
+     .descpara{
+        font-size: 0.9rem !important;
+    }
+
+}
+
+
+
+.secondcolor{
+    /* color: rgb(199, 163, 4); */
+    background: linear-gradient(45deg, #8c09d2, #2ab0e5,#8c09d2,#2ab0e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+h1,p{
+    color: white;
+}
+
+.lead{
+    font-size: 2rem;
+}
+
+/* .backgroundfilter{
+    backdrop-filter: blur(5px);
+     height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -999;
+} */
+
+
+
+.servicebutton{
+    border-radius: 50px;
+    padding: 5px;
+    background: transparent;
+    border: solid rgb(87, 128, 215) ;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    /* width: 170px; */
+}
+
+.servicebutton:hover{
+    border: solid white ;
+    background-color: white;
+    color:rgb(87, 128, 215);
+    transform: scale(1.1);
+   
+}
+
+.joinbutton{
+    border-radius: 50px;
+    padding: 5px;
+    background: transparent;
+    border: solid rgb(87, 128, 215) ;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    /* width: 170px; */
+}
+
+.joinbutton:hover{
+    border: solid white ;
+    background-color: white;
+    color:rgb(87, 128, 215);
+    transform: scale(1.1);
+   
+}
+
+.services{
+  margin-top: 20px;
+  height: 160vh;
+  /* border: solid pink; */
+}
+
+.serviceh1{
+    
+    text-align: center;
+    margin-top: 10%;
+}
+
+/* .cards{
+    border: solid white;
+    display: flex;
+    justify-content: space-around;
+} */
+.card1{
+    padding: 5px;
+   height: 60vh;
+   width: 100%;
+   /* border: solid white; */
+   display: flex;
+   border-radius: 10px;
+}
+
+.draw{
+  
+    width: 40%;
+    height: 100%;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.descjob{
+   
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc{
+    
+    width: 60%;
+    height: 100%;
+   
+}
+
+.descpara{
+    font-size: 1.1rem;
+}
+
+
+.desc2{
+    /* border: solid green; */
+    width: 40%;
+    height: 100%;
+   
+}
+
+.draw2{
+    width: 60%;
+    height: 100%;
+   
+}
+
+
+.deschead{
+    
+    background: linear-gradient(45deg, #8c09d2, #2ab0e5,#8c09d2,#2ab0e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about{
+
+    height: 70vh;
+    width: 100%;
+    /* border: solid violet; */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+   
+}
+
+.two{
+width: 100%;
+height: 90%;
+/* border: solid white; */
+display: flex;
+flex-direction: row;
+
+}
+
+.kmit{
+    width: 40%;
+    /* border: solid green; */
+}
+.kmitdesc{
+    width: 60%;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.kmitdeschead{
+    
+    color: rgb(87, 128, 215);
+    
+}
+
+.contact{
+   
+   
+    height: 70vh;
+    
+    h1{
+        font-size: 3rem;
+        justify-self: center;
+       }    
+
+}
+.contactdiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.contactus{
+    
+    width: 70%;
+    height: 89%;
+    /* display: flex;
+    align-items: center; */
+
+}
+
+.contactinfo{
+
+height: 60%;
+display: flex;
+/* justify-content: center; */
+align-items: center;
+flex-direction: column;
+p{
+    font-size: 1.3rem;
+}
+
+}
+
+.contactusbtn{
+    background-color: rgb(51, 107, 230);
+    color: white;
+    width: 150px;
+    height: 40px;
+    font-family: Varela Round;
+    border-radius: 7px;
+}
+.robot{
+   
+    width: 30%;
+    height: 89%;
+    display: flex;
+    /* justify-content: center;  */
+}
+
+  
+  
+
+   h3,
+   h4{
+    color: white;
+   }
+
+   /* styles for login and signup pages */
+   .fullbody{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+ }
+   .logsign{
+    /* this is a section of login and signup containers */
+   display: none;
+    height: 70vh;
+    width: 80vw;
+    border-radius: 50px;
+  align-items: center;
+   background-color: white;
+   position: absolute;
+   top: 15%;
+   left: 9%;
+    z-index: 999;
+    animation: slide-in 1.0s ease-in-out forwards;
+     opacity: 0;
+ }
+
+ @keyframes slide-in {
+    0% {
+       opacity: 0.0;
+        /* filter: blur(4px); */
+    }
+    10% {
+        opacity: 0.10;
+        /* filter: blur(3px); */
+    } 
+    20% {
+        opacity: 0.20;
+        /* filter: blur(2px);  */
+    }
+
+     30% {
+        opacity: 0.30;
+        /* filter: blur(1px); */
+    }
+
+
+40% {
+    opacity: 0.40;
+        /* filter: blur(0);  */
+    }
+    50% {
+        opacity: 0.50;
+         /* filter: blur(4px); */
+     }
+     60% {
+         opacity: 0.60;
+         /* filter: blur(3px); */
+     } 
+     70% {
+         opacity: 0.70;
+         /* filter: blur(2px);  */
+     }
+ 
+      80% {
+         opacity: 0.80;
+         /* filter: blur(1px); */
+     }
+ 
+ 
+ 90% {
+     opacity: 0.90;
+         /* filter: blur(0);  */
+     }
+     100% {
+        opacity: 1;
+            /* filter: blur(0);  */
+        }
+
+}
+/* this is message div */
+.message{
+    width: 50%;
+    height: 100%;
+    border-radius:50px 80px 80px 50px  ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(87, 128, 215);
+    h1{
+        font-family: Varela Round ;
+    }
+    p{
+        font-family: Varela Round ;
+    }
+    H4{
+        font-family: Varela Round ;
+    }
+    
+   }
+/* this is form div */
+   .login{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    border-radius:  80px 0px 0px 80px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+   }
+
+   .sign{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    border-radius:  80px 0px 0px 80px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+   
+   }
+
+/* this is form div */
+   .formpage{
+    height: 90%;
+    width: 80%;
+    border: solid black;
+    box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    h1{
+        font-family: Varela Round ;
+        color: black;
+        font-size: 2rem;
+
+    }
+   .loginbtn{
+    width: 350px;
+    height: 40px;
+    background-color:rgb(90, 135, 231) ;
+    color: white;
+   }
+   }
+
+   #signupform{
+    /* border: solid red; */
+    height: 100%;
+   }
+
+   .createacc{
+    
+ 
+    border-radius: 30px;
+    height: 45px;
+    width: 150px;
+    font-size:1.2rem ;
+    background-color: white;
+    color:rgb(87, 128, 215);
+    border: none;
+    transition: transform 0.3s ease-in-out;
+   }
+
+   .createacc:hover{
+   
+    border: solid white ;
+    background-color: white;
+    color:rgb(87, 128, 215);
+    transform: scale(1.1);
+
+   }
+
+ /* .signup{
+    display: none;
+ } */
+
+ .messagediv{
+    background-color: hsl(327, 90%, 28%);
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius:5px ;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards ;
+ }
