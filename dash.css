@@ -475,19 +475,17 @@ p {
 }
 
 
-
 .updatefeatures{
   height: 90%;
- 
 }
 #difficulty {
   font-family: 'Varela Round', sans-serif; /* or any modern font you prefer */
   font-size: 1rem;
   padding: 0.6rem;
   border-radius: 8px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #b2b8bf;
   background-color: white;
-  color: rgb(196, 186, 186);
+  color: lab(14.41% 0.93 0.33);
 }
 .thumb-buttons {
   display: flex;
